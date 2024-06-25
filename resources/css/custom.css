@@ -1,0 +1,9 @@
+.tui-full-calendar-time-schedule, 
+.tui-full-calendar-weekday-schedule {
+    height: 70px; /* Modifier cette valeur pour ajuster la hauteur */
+    line-height: 70px; /* Aligner le texte verticalement */
+}
+
+.tui-full-calendar-weekday-schedule-title {
+    font-size: 14px; /* Ajuster la taille de la police si nécessaire */
+}

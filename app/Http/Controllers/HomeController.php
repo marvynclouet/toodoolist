@@ -1,28 +1,20 @@
 <?php
 
+// App\Http\Controllers\HomeController.php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        // Récupérer toutes les tâches de l'utilisateur connecté
+        $tasks = Task::where('user_id', auth()->id())->get();
+
+        // Retourner la vue dashboard avec les tâches
+        return view('dashboard', ['tasks' => $tasks]);
     }
 }
